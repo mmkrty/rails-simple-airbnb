@@ -5,21 +5,21 @@
 
 
       <% @flats.each do |flat| %>
-      <div class="col">
-        <div class="card h-100">
-          <img src="<%= flat.picture_url %>" class="card-img-top h-50" alt="...">
-          <div class="card-body">
-              <h5 class="card-title"><%= flat.name %></h5>
-              <p> <i class="fa-solid fa-user-group"></i> <span><%= flat.price_per_night %> </span> <i class="fa-sharp fa-solid fa-euro-sign"></i> <span><%= flat.price_per_night %></span></p>
-              <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
-              <p class="card-text"><%= flat.description %></p>
-          </div>
-          <div class="card-footer">
-                <%= link_to "See", flat_path(flat), class: "btn btn-primary" %>
-                <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-warning" %>
-                <%= link_to "Remove", flats_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+        <div class="col">
+          <div class="card h-100">
+            <img src="<%= flat.picture_url %>" class="card-img-top h-50" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= flat.name %></h5>
+                <p> <i class="fa-solid fa-user-group"></i> <span><%= flat.number_of_guests %> </span> <i class="fa-sharp fa-solid fa-euro-sign"></i> <span><%= flat.price_per_night %></span></p>
+                <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
+                <p class="card-text"><%= flat.description %></p>
             </div>
-        </div>
+            <div class="card-footer">
+                  <%= link_to "See", flat_path(flat), class: "btn btn-primary" %>
+                  <%= link_to "Edit", edit_flat_path(flat), class: "btn btn-warning" %>
+                  <%= link_to "Remove", flats_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+              </div>
+          </div>
       </div>
       <% end %>
 

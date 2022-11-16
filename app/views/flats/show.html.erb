@@ -1,13 +1,17 @@
-<div class="container">
-  <h1> <%= @flat.name %> </h1>
-  <%= link_to "Edit", edit_flat_path %>
 
-  <p> <%= @flat.address %> </p>
-  <p> <%= @flat.description %> </p>
-  <p> <%= @flat.price_per_night %> </p>
-  <p> <%= @flat.number_of_guests %> </p>
+<div class="container d-flex flex-column">
+    <img src="<%= @flat.picture_url %>" class="w-100 h-50">
+  <div class="p-4 shadow-4 rounded-3" style="background-color: hsl(0, 0%, 94%);">
+    <h2> <%= @flat.name %> </h2>
+    <p> <%= @flat.address %> </p>
+    <p> <i class="fa-solid fa-user-group"></i> <%= @flat.price_per_night %> <i class="fa-sharp fa-solid fa-euro-sign"></i> <%= @flat.number_of_guests %> </p>
+
+    <p>
+      <%= @flat.description %>
+    </p>
+    <%= link_to "Edit", edit_flat_path, class: "btn btn-warning" %>
 
 
-
-  <%= link_to "Back to index", flats_path %>
+  </div>
+  <%= link_to "Back to index", flats_path, class: "btn btn-primary" %>
 </div>
